@@ -9,5 +9,8 @@ const jane = createPlayer("jane");
 log(Gameboard);
 log(Gameboard.getField());
 log(john);
-log(jane);
-log(GameController);
+log(john.getScore());
+log(john.incrementScore());
+log(john.incrementScore());
+log(john.getScore());
+/* log(GameController); */
