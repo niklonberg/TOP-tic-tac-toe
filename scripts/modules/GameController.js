@@ -1,5 +1,7 @@
-export const GameController = function () {
-  const board = Gameboard;
+import { Gameboard } from "./Gameboard.js";
 
-  return { board };
-};
+export const GameController = (function () {
+  const game = Gameboard;
+
+  return { game };
+})();
