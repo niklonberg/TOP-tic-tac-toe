@@ -7,6 +7,7 @@ const john = createPlayer("john");
 const jane = createPlayer("jane");
 
 log(Gameboard);
+log(Gameboard.getField());
 log(john);
 log(jane);
 log(GameController);
