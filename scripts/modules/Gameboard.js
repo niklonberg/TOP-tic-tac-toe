@@ -1,4 +1,4 @@
-export const Gameboard = (function () {
+const Gameboard = (function () {
   const gameField = new Array(9).fill(null);
 
   const getField = () => gameField;
@@ -9,3 +9,5 @@ export const Gameboard = (function () {
 
   return { getField, addMarker };
 })();
+
+export default Gameboard;

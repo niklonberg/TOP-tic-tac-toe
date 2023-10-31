@@ -1,4 +1,4 @@
-export const createPlayer = function (name, marker) {
+const createPlayer = function (name, marker) {
   let score = 0;
   const mark = marker;
 
@@ -10,3 +10,5 @@ export const createPlayer = function (name, marker) {
 
   return { name, getScore, incrementScore, getMarker };
 };
+
+export default createPlayer;

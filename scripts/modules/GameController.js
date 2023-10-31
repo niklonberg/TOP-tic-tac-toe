@@ -1,4 +1,4 @@
-import { Gameboard } from "./Gameboard.js";
+import Gameboard from "./Gameboard.js";
 
 export const GameController = (function () {
   const board = Gameboard;
@@ -16,3 +16,5 @@ export const GameController = (function () {
 
   return { board, players, addPlayer };
 })();
+
+export default GameController;
