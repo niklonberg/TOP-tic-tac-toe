@@ -1,6 +1,6 @@
 import Gameboard from "./Gameboard.js";
 
-export const GameController = (function () {
+const GameController = (function () {
   const board = Gameboard;
   const players = {};
 

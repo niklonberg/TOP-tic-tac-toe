@@ -8,7 +8,11 @@ const Gameboard = (function () {
   };
 
   const addMarker = (index, player) => {
-    gameField[index] = player.getMarker();
+    if (gameField[index] === null) {
+      gameField[index] = player.getMarker();
+    } else {
+      throw new Error("That slot is filled!");
+    }
   };
 
   return { getField, resetField, addMarker };
