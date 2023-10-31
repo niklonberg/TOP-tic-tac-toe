@@ -8,6 +8,7 @@ const Gameboard = (function () {
   };
 
   const addMarker = (index, player) => {
+    /* const activePlayer = getActivePlayer() */
     if (gameField[index] === null) {
       gameField[index] = player.getMarker();
     } else {
