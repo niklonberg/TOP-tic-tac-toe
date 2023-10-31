@@ -1,5 +1,6 @@
-const createPlayer = function (name, marker, isActive = false) {
+const createPlayer = function (name, marker, active = false) {
   let score = 0;
+  let isActive = active;
   const mark = marker;
 
   const getScore = () => score;
@@ -8,7 +9,20 @@ const createPlayer = function (name, marker, isActive = false) {
 
   const getMarker = () => mark;
 
-  return { name, isActive, getScore, incrementScore, getMarker };
+  const getActiveStatus = () => isActive;
+
+  const setActiveStatus = () => {
+    isActive = !isActive;
+  };
+
+  return {
+    name,
+    getScore,
+    incrementScore,
+    getMarker,
+    getActiveStatus,
+    setActiveStatus,
+  };
 };
 
 export default createPlayer;

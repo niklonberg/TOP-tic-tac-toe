@@ -14,8 +14,10 @@ const GameController = (function () {
 
   const switchActivePlayer = () => {
     players.forEach((player) => {
-      player.isActive = !player.isActive;
-      console.log(`Player ${player.name} is active: ${player.isActive}`);
+      player.setActiveStatus();
+      console.log(
+        `Player ${player.name} is active: ${player.getActiveStatus()}`
+      );
     });
   };
 
@@ -30,7 +32,7 @@ const GameController = (function () {
 
   /* (this function could recursively call playRound?) */
   const startGame = () => {
-    /* set active player */
+    /* set player[0] to active */
     /* playRound() */
     /* check for win condition, if so endGame() */
     /* re run playRound()*/
