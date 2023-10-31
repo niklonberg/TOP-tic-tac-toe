@@ -1,7 +1,12 @@
 import { Gameboard } from "./Gameboard.js";
 
 export const GameController = (function () {
-  const game = Gameboard;
+  const gameState = Gameboard;
+  const players = {};
 
-  return { game };
+  const addPlayer = (player) => {
+    players[player.name] = player;
+  };
+
+  return { gameState, players, addPlayer };
 })();
