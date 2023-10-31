@@ -12,5 +12,7 @@ export const GameController = (function () {
     }
   };
 
+  const playRound = () => {};
+
   return { board, players, addPlayer };
 })();

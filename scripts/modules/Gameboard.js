@@ -1,7 +1,10 @@
 export const Gameboard = (function () {
-  const gameField = ["x", "o", , "x", , "o", "x", "o", ,];
-
+  const gameField = new Array(9).fill(null);
   const getField = () => gameField;
 
-  return { gameField, getField };
+  const addMarker = (index, player) => {
+    gameField[index] = player.marker;
+  };
+
+  return { getField, addMarker };
 })();
