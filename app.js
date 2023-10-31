@@ -15,5 +15,4 @@ GameController.board.addMarker(2, john);
 log(GameController.board.getField());
 GameController.board.addMarker(0, jane);
 log(GameController.board.getField());
-GameController.board.addMarker(2, john);
 log(GameController);
