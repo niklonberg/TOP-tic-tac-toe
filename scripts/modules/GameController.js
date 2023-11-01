@@ -14,10 +14,7 @@ const GameController = (function () {
 
   const switchActivePlayer = () => {
     players.forEach((player) => {
-      player.setActiveStatus();
-      console.log(
-        `Player ${player.name} is active: ${player.getActiveStatus()}`
-      );
+      player.switchActiveStatus();
     });
   };
 

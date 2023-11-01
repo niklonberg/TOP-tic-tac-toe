@@ -11,9 +11,7 @@ const createPlayer = function (name, marker, active = false) {
 
   const getActiveStatus = () => isActive;
 
-  const setActiveStatus = () => {
-    isActive = !isActive;
-  };
+  const switchActiveStatus = () => (isActive = !isActive);
 
   return {
     name,
@@ -21,7 +19,7 @@ const createPlayer = function (name, marker, active = false) {
     incrementScore,
     getMarker,
     getActiveStatus,
-    setActiveStatus,
+    switchActiveStatus,
   };
 };
 
