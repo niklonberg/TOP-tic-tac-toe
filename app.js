@@ -11,11 +11,21 @@ GameController.addPlayer(john);
 GameController.addPlayer(jane);
 GameController.board.getField();
 log(`the active player is: `, GameController.getActivePlayer());
-GameController.playRound(1);
-GameController.board.getField();
-log(`the active player is: `, GameController.getActivePlayer());
-GameController.playRound(5);
+//john
+GameController.playRound(2);
 GameController.board.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 GameController.playRound(3);
 GameController.board.getField();
+log(`the active player is: `, GameController.getActivePlayer());
+//john
+GameController.playRound(5);
+GameController.board.getField();
+log(`the active player is: `, GameController.getActivePlayer());
+GameController.playRound(7);
+GameController.board.getField();
+log(`the active player is: `, GameController.getActivePlayer());
+//john
+GameController.playRound(8);
+GameController.board.getField();
+log(GameController.board.checkForWin(john));

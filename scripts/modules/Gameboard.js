@@ -33,7 +33,28 @@ const Gameboard = (function () {
     }
   };
 
-  return { getField, resetField, addMarker };
+  const checkForWin = (activePlayer) => {
+    const marker = activePlayer.getMarker();
+    let winConditionMet = false;
+    console.log("marker is: ", marker);
+
+    for (const combination of winningCombinations) {
+      console.log(combination);
+      winConditionMet = combination.every((index) => {
+        return gameField[index] === marker;
+      });
+
+      if (winConditionMet) {
+        console.log("win condition was met: ", winConditionMet);
+        console.log("winning player is: ", activePlayer);
+        break;
+      }
+    }
+
+    return winConditionMet;
+  };
+
+  return { getField, resetField, addMarker, checkForWin };
 })();
 
 export default Gameboard;
