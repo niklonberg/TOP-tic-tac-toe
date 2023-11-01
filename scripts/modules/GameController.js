@@ -26,7 +26,10 @@ const GameController = (function () {
   const playRound = (index) => {
     const activePlayer = getActivePlayer();
     board.addMarker(index, activePlayer);
-    switchActivePlayer();
+    const winConditionMet = board.checkForWin(activePlayer);
+    winConditionMet
+      ? (console.log("game is over!"), endGame())
+      : switchActivePlayer();
   };
 
   /* (this function could recursively call playRound?) */
