@@ -12,16 +12,21 @@ const GameController = (function () {
     }
   };
 
+  const getActivePlayer = () => {
+    return players.filter((player) => player.getActiveStatus());
+  };
+
   const switchActivePlayer = () => {
     players.forEach((player) => {
       player.switchActiveStatus();
     });
   };
 
-  const playRound = (player) => {
+  const playRound = () => {
+    const activePlayer = getActivePlayer();
     /* active player sets down their marker */
+    board.addMarker(0, activePlayer);
     /* switch active player */
-    board.addMarker(0, player);
   };
 
   /* (this function could recursively call playRound?) */
@@ -41,7 +46,7 @@ const GameController = (function () {
     /* startGame() */
   };
 
-  return { board, players, addPlayer, switchActivePlayer };
+  return { board, players, addPlayer, switchActivePlayer, getActivePlayer };
 })();
 
 export default GameController;

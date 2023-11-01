@@ -9,10 +9,5 @@ const jane = createPlayer("jane", "o");
 log(GameController);
 GameController.addPlayer(john);
 GameController.addPlayer(jane);
-GameController.board.addMarker(1, john);
-/* GameController.board.addMarker(1, getActivePlayer()); */
-GameController.switchActivePlayer();
-log(GameController.board.getField());
-GameController.board.resetField();
-log(GameController.board.getField());
+log(GameController.getActivePlayer());
 log(GameController);
