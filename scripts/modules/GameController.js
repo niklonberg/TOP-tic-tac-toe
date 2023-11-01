@@ -31,7 +31,6 @@ const GameController = (function () {
 
   /* (this function could recursively call playRound?) */
   const startGame = () => {
-    /* set player[0] to active */
     /* playRound() */
     /* check for win condition, if so endGame() */
     /* re run playRound()*/
