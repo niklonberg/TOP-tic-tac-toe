@@ -1,7 +1,10 @@
 const Gameboard = (function () {
   let gameField = new Array(9).fill(null);
 
-  const getField = () => gameField;
+  const getField = () => {
+    console.log("the field is currently: ", gameField);
+    return gameField;
+  };
 
   const resetField = () => {
     gameField.forEach((_, index) => {
@@ -10,7 +13,6 @@ const Gameboard = (function () {
   };
 
   const addMarker = (index, player) => {
-    /* const activePlayer = getActivePlayer() */
     if (gameField[index] === null) {
       gameField[index] = player.getMarker();
     } else {

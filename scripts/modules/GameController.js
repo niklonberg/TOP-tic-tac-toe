@@ -13,7 +13,7 @@ const GameController = (function () {
   };
 
   const getActivePlayer = () => {
-    return players.filter((player) => player.getActiveStatus());
+    return players.find((player) => player.getActiveStatus());
   };
 
   const switchActivePlayer = () => {
@@ -22,11 +22,11 @@ const GameController = (function () {
     });
   };
 
-  const playRound = () => {
+  /* playRound is eventually invoked on click */
+  const playRound = (index) => {
     const activePlayer = getActivePlayer();
-    /* active player sets down their marker */
-    board.addMarker(0, activePlayer);
-    /* switch active player */
+    board.addMarker(index, activePlayer);
+    switchActivePlayer();
   };
 
   /* (this function could recursively call playRound?) */
@@ -46,7 +46,14 @@ const GameController = (function () {
     /* startGame() */
   };
 
-  return { board, players, addPlayer, switchActivePlayer, getActivePlayer };
+  return {
+    board,
+    players,
+    addPlayer,
+    switchActivePlayer,
+    getActivePlayer,
+    playRound,
+  };
 })();
 
 export default GameController;
