@@ -1,7 +1,7 @@
 import Gameboard from "./Gameboard.js";
 
 const GameController = (function () {
-  const board = Gameboard;
+  const board = Gameboard; /* should this be here? */
   const players = [];
 
   const addPlayer = (player) => {
@@ -17,9 +17,7 @@ const GameController = (function () {
   };
 
   const switchActivePlayer = () => {
-    players.forEach((player) => {
-      player.switchActiveStatus();
-    });
+    players.forEach((player) => player.switchActiveStatus());
   };
 
   /* playRound is eventually invoked on click */
@@ -32,7 +30,6 @@ const GameController = (function () {
       : switchActivePlayer();
   };
 
-  /* (this function could recursively call playRound?) */
   const startGame = () => {
     /* playRound() */
     /* check for win condition, if so endGame() */
@@ -50,7 +47,6 @@ const GameController = (function () {
 
   return {
     board,
-    players,
     addPlayer,
     switchActivePlayer,
     getActivePlayer,

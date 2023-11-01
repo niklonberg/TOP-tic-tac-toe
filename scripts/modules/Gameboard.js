@@ -1,5 +1,6 @@
 const Gameboard = (function () {
-  let gameField = new Array(9).fill(null);
+  const gameField = new Array(9).fill(null);
+
   const winningCombinations = [
     //horizontal
     [0, 1, 2],
@@ -39,7 +40,6 @@ const Gameboard = (function () {
     console.log("marker is: ", marker);
 
     for (const combination of winningCombinations) {
-      console.log(combination);
       winConditionMet = combination.every((index) => {
         return gameField[index] === marker;
       });
