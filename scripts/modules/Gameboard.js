@@ -4,7 +4,9 @@ const Gameboard = (function () {
   const getField = () => gameField;
 
   const resetField = () => {
-    gameField = new Array(9).fill(null);
+    gameField.forEach((_, index) => {
+      gameField[index] = null;
+    });
   };
 
   const addMarker = (index, player) => {

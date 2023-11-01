@@ -13,4 +13,7 @@ GameController.board.addMarker(1, john);
 /* GameController.board.addMarker(1, getActivePlayer()); */
 GameController.switchActivePlayer();
 GameController.switchActivePlayer();
+log(GameController.board.getField());
+GameController.board.resetField();
+log(GameController.board.getField());
 log(GameController);

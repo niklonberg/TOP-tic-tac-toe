@@ -21,9 +21,6 @@ const GameController = (function () {
     });
   };
 
-  /*
-  Need activePlayer tracker/variable? or do i?
-  */
   const playRound = (player) => {
     /* active player sets down their marker */
     /* switch active player */
