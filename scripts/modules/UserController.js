@@ -5,6 +5,7 @@ const UserController = (function () {
   const addUserModal = document.querySelector("#add-user-modal");
   const addUserForm = document.querySelector("#add-user-form");
   const userNameInput = document.querySelector("#user-name");
+  const closeUserModalBtn = document.querySelector("#close-user-modal");
 
   const clickFormSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +16,8 @@ const UserController = (function () {
   };
 
   addUserBtn.addEventListener("click", () => addUserModal.showModal());
+
+  closeUserModalBtn.addEventListener("click", () => addUserModal.close());
 
   addUserForm.addEventListener("submit", (event) => clickFormSubmit(event));
 })();
