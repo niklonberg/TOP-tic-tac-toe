@@ -3,6 +3,9 @@ import Gameboard from "./Gameboard.js";
 const GameController = (function () {
   const board = Gameboard;
   const players = [];
+  /* have a way to empty players
+     so we can store multiple users and add two
+     in when startGame runs */
 
   const addPlayer = (player) => {
     if (players.length < 2) {
@@ -42,13 +45,14 @@ const GameController = (function () {
     /* player1.getScore(), player2.getScore() */
     /* play again? button */
     /* if so, resetField() */
+    /* empty players array */
     /* startGame() */
   };
 
   return {
     getField: board.getField,
     addPlayer,
-    switchActivePlayer,
+    switchActivePlayer /* delete? */,
     getActivePlayer,
     playRound,
   };

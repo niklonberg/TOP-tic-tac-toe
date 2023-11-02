@@ -21,14 +21,19 @@ const DisplayController = (function () {
     });
   };
 
-  const updateBoard = () => {};
+  const updateBoard = (element, marker) => {
+    element.textContent = marker;
+    playerTurnDiv.textContent = `It's ${game.getActivePlayer().name}'s turn!`;
+  };
 
   const clickHandlerField = (event) => {
-    console.log(event.target);
     const fieldIndex = event.target.dataset.index;
-    console.log(fieldIndex);
+    const marker = game.getActivePlayer().getMarker();
+
     if (!fieldIndex) return;
+
     game.playRound(fieldIndex);
+    updateBoard(event.target, marker);
   };
 
   gameContainer.addEventListener("click", clickHandlerField);
