@@ -5,11 +5,11 @@ const DisplayController = (function () {
   const gameField = game.getField();
   const gameContainer = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
+  const addUserBtn = document.querySelector("#add-user");
 
   const createFieldItem = () => {
     const btn = document.createElement("button");
     /* add class, id etc. */
-    btn.textContent = "click"; /* placeholder text */
     return btn;
   };
 
