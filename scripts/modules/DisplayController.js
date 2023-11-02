@@ -25,6 +25,10 @@ const DisplayController = (function () {
 
   const clickHandlerField = (event) => {
     console.log(event.target);
+    const fieldIndex = event.target.dataset.index;
+    console.log(fieldIndex);
+    if (!fieldIndex) return;
+    game.playRound(fieldIndex);
   };
 
   gameContainer.addEventListener("click", clickHandlerField);

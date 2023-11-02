@@ -11,7 +11,7 @@ DisplayController.renderBoard();
 
 GameController.addPlayer(john);
 GameController.addPlayer(jane);
-GameController.getField();
+/* GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(0);
@@ -30,4 +30,4 @@ log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(6);
 GameController.getField();
-console.log(john.getScore());
+console.log(john.getScore()); */
