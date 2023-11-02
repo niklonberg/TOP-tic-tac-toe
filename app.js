@@ -11,23 +11,23 @@ DisplayController.renderBoard();
 
 GameController.addPlayer(john);
 GameController.addPlayer(jane);
-GameController.board.getField();
+GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(0);
-GameController.board.getField();
+GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 GameController.playRound(2);
-GameController.board.getField();
+GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(3);
-GameController.board.getField();
+GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 GameController.playRound(7);
-GameController.board.getField();
+GameController.getField();
 log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(6);
-GameController.board.getField();
+GameController.getField();
 console.log(john.getScore());

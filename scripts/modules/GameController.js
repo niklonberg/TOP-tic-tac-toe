@@ -1,7 +1,7 @@
 import Gameboard from "./Gameboard.js";
 
 const GameController = (function () {
-  const board = Gameboard; /* should this be here? */
+  const board = Gameboard;
   const players = [];
 
   const addPlayer = (player) => {
@@ -46,7 +46,7 @@ const GameController = (function () {
   };
 
   return {
-    board,
+    getField: board.getField,
     addPlayer,
     switchActivePlayer,
     getActivePlayer,

@@ -1,7 +1,8 @@
-import Gameboard from "./Gameboard.js";
+import GameController from "./GameController.js";
 
 const DisplayController = (function () {
-  const gameField = Gameboard.getField();
+  const game = GameController;
+  const gameField = game.getField();
   const gameContainer = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
 
@@ -22,9 +23,11 @@ const DisplayController = (function () {
 
   const updateBoard = () => {};
 
-  gameContainer.addEventListener("click", (event) => {
+  const clickHandlerField = (event) => {
     console.log(event.target);
-  });
+  };
+
+  gameContainer.addEventListener("click", clickHandlerField);
 
   return { createFieldItem, renderBoard, updateBoard };
 })();
