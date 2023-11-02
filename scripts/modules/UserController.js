@@ -1,6 +1,4 @@
 const UserController = (function () {
-  const users = [];
-
   const userList = document.querySelector("#user-list");
   const addUserBtn = document.querySelector("#add-user");
   const addUserModal = document.querySelector("#add-user-modal");
@@ -8,20 +6,35 @@ const UserController = (function () {
   const userNameInput = document.querySelector("#user-name");
   const closeUserModalBtn = document.querySelector("#close-user-modal");
 
-  const clickFormSubmit = (event) => {
-    event.preventDefault();
-    users.push(userNameInput.value);
-    userNameInput.value = "";
-    addUserModal.close();
-    /* addLatestUser(); */
+  let users = [];
+
+  const getStoredUsers = () => {
+    const storedUsers = localStorage.getItem("users");
+    if (storedUsers) users = JSON.parse(storedUsers);
+  };
+
+  const addLatestUser = (user) => {
+    users.push(user);
+    localStorage.setItem("users", JSON.stringify(users));
+    renderLatestUserItem(user);
   };
 
   const populateUserList = () => {
-    users.forEach((user) => {
-      const li = document.createElement("li");
-      li.textContent = user;
-      userList.appendChild(li);
-    });
+    userList.innerHTML = "";
+    users.forEach((user) => renderLatestUserItem(user));
+  };
+
+  const renderLatestUserItem = (newUser) => {
+    const li = document.createElement("li");
+    li.textContent = newUser;
+    userList.appendChild(li);
+  };
+
+  const clickFormSubmit = (event) => {
+    event.preventDefault();
+    addLatestUser(userNameInput.value);
+    userNameInput.value = "";
+    addUserModal.close();
   };
 
   addUserBtn.addEventListener("click", () => addUserModal.showModal());
@@ -29,6 +42,8 @@ const UserController = (function () {
   closeUserModalBtn.addEventListener("click", () => addUserModal.close());
 
   addUserForm.addEventListener("submit", (event) => clickFormSubmit(event));
+
+  return { getStoredUsers, populateUserList };
 })();
 
 export default UserController;

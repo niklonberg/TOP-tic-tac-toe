@@ -23,7 +23,6 @@ const GameController = (function () {
     players.forEach((player) => player.switchActiveStatus());
   };
 
-  /* playRound is eventually invoked on click */
   const playRound = (index) => {
     const activePlayer = getActivePlayer();
     board.addMarker(index, activePlayer);
