@@ -1,6 +1,7 @@
 const UserController = (function () {
   const users = [];
 
+  const userList = document.querySelector("#user-list");
   const addUserBtn = document.querySelector("#add-user");
   const addUserModal = document.querySelector("#add-user-modal");
   const addUserForm = document.querySelector("#add-user-form");
@@ -12,7 +13,15 @@ const UserController = (function () {
     users.push(userNameInput.value);
     userNameInput.value = "";
     addUserModal.close();
-    console.log(users);
+    /* addLatestUser(); */
+  };
+
+  const populateUserList = () => {
+    users.forEach((user) => {
+      const li = document.createElement("li");
+      li.textContent = user;
+      userList.appendChild(li);
+    });
   };
 
   addUserBtn.addEventListener("click", () => addUserModal.showModal());
