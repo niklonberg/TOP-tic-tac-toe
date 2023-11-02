@@ -24,9 +24,9 @@ const UserController = (function () {
     users.forEach((user) => renderLatestUserItem(user));
   };
 
-  const renderLatestUserItem = (newUser) => {
+  const renderLatestUserItem = (user) => {
     const li = document.createElement("li");
-    li.textContent = newUser;
+    li.textContent = user;
     userList.appendChild(li);
   };
 
