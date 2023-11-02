@@ -37,7 +37,6 @@ const Gameboard = (function () {
   const checkForWin = (activePlayer) => {
     const marker = activePlayer.getMarker();
     let winConditionMet = false;
-    console.log("marker is: ", marker);
 
     for (const combination of winningCombinations) {
       winConditionMet = combination.every((index) => {

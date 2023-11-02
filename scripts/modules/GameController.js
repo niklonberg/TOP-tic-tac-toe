@@ -26,7 +26,7 @@ const GameController = (function () {
     board.addMarker(index, activePlayer);
     const winConditionMet = board.checkForWin(activePlayer);
     winConditionMet
-      ? (console.log("game is over!"), endGame())
+      ? (console.log("game is over!"), endGame(activePlayer))
       : switchActivePlayer();
   };
 
@@ -36,9 +36,9 @@ const GameController = (function () {
     /* re run playRound()*/
   };
 
-  const endGame = () => {
+  const endGame = (activePlayer) => {
     /* x player wins! */
-    /* winning player.incrementScore() */
+    activePlayer.incrementScore();
     /* player1.getScore(), player2.getScore() */
     /* play again? button */
     /* if so, resetField() */

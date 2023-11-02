@@ -27,3 +27,4 @@ log(`the active player is: `, GameController.getActivePlayer());
 //john
 GameController.playRound(6);
 GameController.board.getField();
+console.log(john.getScore());
