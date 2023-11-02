@@ -3,7 +3,7 @@ import Gameboard from "./Gameboard.js";
 const DisplayController = (function () {
   const gameField = Gameboard.getField();
   const gameContainer = document.querySelector("#game-board");
-  const activePlayerMsgBox = document.querySelector("#active-player");
+  const playerTurnDiv = document.querySelector("#active-player");
 
   const createFieldItem = () => {
     const btn = document.createElement("button");
@@ -21,6 +21,10 @@ const DisplayController = (function () {
   };
 
   const updateBoard = () => {};
+
+  gameContainer.addEventListener("click", (event) => {
+    console.log(event.target);
+  });
 
   return { createFieldItem, renderBoard, updateBoard };
 })();
