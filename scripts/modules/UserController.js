@@ -70,9 +70,9 @@ const UserController = (function () {
     const chosenPlayers = [...choosePlayersList.selectedOptions].map(
       (option) => option.value
     );
-    GameController.emptyPlayers();
-    GameController.addPlayers(chosenPlayers);
+    GameController.startGame(chosenPlayers);
     /* tell DisplayController to show the game board */
+    /* update playerTurnDiv */
     choosePlayersModal.close();
   };
 

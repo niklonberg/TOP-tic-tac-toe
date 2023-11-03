@@ -34,15 +34,17 @@ const GameController = (function () {
       : switchActivePlayer();
   };
 
-  const startGame = () => {
-    /* playRound() */
-    /* check for win condition, if so endGame() */
-    /* re run playRound()*/
+  const startGame = (chosenPlayers) => {
+    emptyPlayers();
+    addPlayers(chosenPlayers);
   };
 
   const endGame = (activePlayer) => {
     /* x player wins! */
     activePlayer.incrementScore();
+    players.forEach((player) => {
+      console.log(player.getScore());
+    });
     /* player1.getScore(), player2.getScore() */
     /* play again? button */
     /* if so, resetField() */
@@ -58,6 +60,7 @@ const GameController = (function () {
     switchActivePlayer /* delete? */,
     getActivePlayer,
     playRound,
+    startGame,
   };
 })();
 
