@@ -71,16 +71,14 @@ const UserController = (function () {
       (option) => option.value
     );
     GameController.startGame(chosenPlayers);
-    /* tell DisplayController to show the game board */
-    /* update playerTurnDiv */
+    DisplayController.renderBoard();
+    DisplayController.updateTurnDiv();
     choosePlayersModal.close();
   };
 
   const limitMaxPlayerSelection = () => {
     const selectedOptions = [...choosePlayersList.selectedOptions];
-    if (selectedOptions.length > 2) {
-      selectedOptions.at(-1).selected = false;
-    }
+    if (selectedOptions.length > 2) selectedOptions.at(-1).selected = false;
   };
 
   choosePlayersForm.addEventListener("submit", (event) => {

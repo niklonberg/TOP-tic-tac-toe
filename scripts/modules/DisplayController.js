@@ -20,6 +20,9 @@ const DisplayController = (function () {
 
   const updateBoard = (element, marker) => {
     element.textContent = marker;
+  };
+
+  const updateTurnDiv = () => {
     playerTurnDiv.textContent = `It's ${
       GameController.getActivePlayer().name
     }'s turn!`;
@@ -39,7 +42,7 @@ const DisplayController = (function () {
 
   gameContainer.addEventListener("click", clickHandlerField);
 
-  return { createFieldItem, renderBoard, updateBoard };
+  return { createFieldItem, renderBoard, updateBoard, updateTurnDiv };
 })();
 
 export default DisplayController;

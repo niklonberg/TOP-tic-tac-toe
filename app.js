@@ -6,11 +6,3 @@ import UserController from "./scripts/modules/UserController.js";
 
 UserController.getStoredUsers();
 UserController.populateUserLists();
-
-/* const john = createPlayer("john", "x", true);
-const jane = createPlayer("jane", "o"); */
-
-/* GameController.addPlayer(john);
-GameController.addPlayer(jane); */
-
-DisplayController.renderBoard();
