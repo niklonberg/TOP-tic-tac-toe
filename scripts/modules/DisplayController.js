@@ -20,6 +20,7 @@ const DisplayController = (function () {
 
   const updateBoard = (element, marker) => {
     element.textContent = marker;
+    updateTurnDiv();
   };
 
   const updateTurnDiv = () => {
