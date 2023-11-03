@@ -4,23 +4,14 @@ import createPlayer from "./CreatePlayer.js";
 const GameController = (function () {
   const board = Gameboard;
   const players = [];
-  /* have a way to empty players
-     so we can store multiple users and add two
-     in when startGame runs */
 
   const addPlayers = (chosenPlayers) => {
     chosenPlayers.forEach((player, index) => {
-      let marker = "x";
-      if (index === 1) {
-        marker = "o";
-      }
-      const newPlayerObj = createPlayer(player);
-      newPlayerObj.setMarker(marker);
+      const marker = index !== 1 ? "x" : "o";
+      const active = index !== 1;
+      const newPlayerObj = createPlayer(player, marker, active);
       players.push(newPlayerObj);
     });
-    console.log(players);
-    console.log(`Player ${players[0].name}`, players[0].getMarker());
-    console.log(`Player ${players[1].name}`, players[1].getMarker());
   };
 
   const emptyPlayers = () => (players.length = 0);
@@ -36,6 +27,7 @@ const GameController = (function () {
   const playRound = (index) => {
     const activePlayer = getActivePlayer();
     board.addMarker(index, activePlayer);
+    console.log(board.getField());
     const winConditionMet = board.checkForWin(activePlayer);
     winConditionMet
       ? (console.log("game is over!"), endGame(activePlayer))
@@ -59,6 +51,7 @@ const GameController = (function () {
   };
 
   return {
+    players /* remove this */,
     getField: board.getField,
     addPlayers,
     emptyPlayers,

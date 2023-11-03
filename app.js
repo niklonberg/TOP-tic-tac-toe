@@ -6,7 +6,6 @@ import UserController from "./scripts/modules/UserController.js";
 
 UserController.getStoredUsers();
 UserController.populateUserLists();
-console.log(UserController.getStoredUsers());
 
 /* const john = createPlayer("john", "x", true);
 const jane = createPlayer("jane", "o"); */
