@@ -9,11 +9,18 @@ const GameController = (function () {
      in when startGame runs */
 
   const addPlayers = (chosenPlayers) => {
-    chosenPlayers.forEach((player) => {
+    chosenPlayers.forEach((player, index) => {
+      let marker = "x";
+      if (index === 1) {
+        marker = "o";
+      }
       const newPlayerObj = createPlayer(player);
+      newPlayerObj.setMarker(marker);
       players.push(newPlayerObj);
     });
     console.log(players);
+    console.log(`Player ${players[0].name}`, players[0].getMarker());
+    console.log(`Player ${players[1].name}`, players[1].getMarker());
   };
 
   const emptyPlayers = () => (players.length = 0);

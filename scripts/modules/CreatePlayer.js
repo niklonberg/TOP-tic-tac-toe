@@ -9,6 +9,8 @@ const createPlayer = function (name) {
 
   const getMarker = () => mark;
 
+  const setMarker = (marker) => (mark = marker);
+
   const getActiveStatus = () => isActive;
 
   const switchActiveStatus = () => (isActive = !isActive);
@@ -18,6 +20,7 @@ const createPlayer = function (name) {
     getScore,
     incrementScore,
     getMarker,
+    setMarker,
     getActiveStatus,
     switchActiveStatus,
   };
