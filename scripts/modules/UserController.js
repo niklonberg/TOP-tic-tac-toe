@@ -5,6 +5,7 @@ const UserController = (function () {
   const addUserForm = document.querySelector("#add-user-form");
   const userNameInput = document.querySelector("#user-name");
   const closeUserModalBtn = document.querySelector("#close-user-modal");
+  const startNewGameBtn = document.querySelector("#start-game");
 
   let users = [];
 
