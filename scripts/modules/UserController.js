@@ -16,7 +16,7 @@ const UserController = (function () {
   const choosePlayersList = document.querySelector("#choose-players-list");
   const closePlayerModal = document.querySelector("#close-player-modal");
 
-  let users = [];
+  let users = ["Player 1", "Player 2"];
 
   /* add users funcs & listeners */
   const getStoredUsers = () => {
