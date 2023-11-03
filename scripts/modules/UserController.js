@@ -51,30 +51,38 @@ const UserController = (function () {
     addUserModal.close();
   };
 
-  addUserBtn.addEventListener("click", () => addUserModal.showModal());
-
-  closeUserModalBtn.addEventListener("click", () => addUserModal.close());
-
   addUserForm.addEventListener("submit", (event) => {
     clickAddUserFormSubmit(event);
   });
 
+  addUserBtn.addEventListener("click", () => addUserModal.showModal());
+
+  closeUserModalBtn.addEventListener("click", () => addUserModal.close());
+
   /* choose players funcs & listeners */
 
-  /* const clickChoosePlayersFormSubmit = (event) => {
+  const clickChoosePlayersFormSubmit = (event) => {
     event.preventDefault();
-  }; */
+  };
+
+  const limitMaxPlayerSelection = () => {
+    const selectedOptions = [...choosePlayersList.selectedOptions];
+    if (selectedOptions.length > 2) {
+      selectedOptions[selectedOptions.length - 1].selected = false;
+    }
+  };
+
+  choosePlayersForm.addEventListener("submit", (event) => {
+    clickChoosePlayersFormSubmit(event);
+  });
+
+  choosePlayersList.addEventListener("change", limitMaxPlayerSelection);
 
   startNewGameBtn.addEventListener("click", () =>
     choosePlayersModal.showModal()
   );
 
   closePlayerModal.addEventListener("click", () => choosePlayersModal.close());
-
-  /* choosePlayersForm.addEventListener(
-    "submit",
-    clickChoosePlayersFormSubmit(event)
-  ); */
 
   return { getStoredUsers, populateUserLists };
 })();
