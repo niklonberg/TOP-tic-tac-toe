@@ -1,3 +1,6 @@
+import GameController from "./GameController.js";
+import DisplayController from "./DisplayController.js";
+
 const UserController = (function () {
   /* add users references */
   const userList = document.querySelector("#user-list");
@@ -14,6 +17,7 @@ const UserController = (function () {
   const closePlayerModal = document.querySelector("#close-player-modal");
 
   let users = [];
+
   /* add users funcs & listeners */
   const getStoredUsers = () => {
     const storedUsers = localStorage.getItem("users");
@@ -63,12 +67,19 @@ const UserController = (function () {
 
   const clickChoosePlayersFormSubmit = (event) => {
     event.preventDefault();
+    const chosenPlayers = [...choosePlayersList.selectedOptions].map(
+      (option) => option.value
+    );
+    GameController.emptyPlayers();
+    GameController.addPlayers(chosenPlayers);
+    /* tell DisplayController to show the game board */
+    choosePlayersModal.close();
   };
 
   const limitMaxPlayerSelection = () => {
     const selectedOptions = [...choosePlayersList.selectedOptions];
     if (selectedOptions.length > 2) {
-      selectedOptions[selectedOptions.length - 1].selected = false;
+      selectedOptions.at(-1).selected = false;
     }
   };
 

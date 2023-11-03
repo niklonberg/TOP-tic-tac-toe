@@ -1,7 +1,7 @@
-const createPlayer = function (name, marker, active = false) {
+const createPlayer = function (name) {
   let score = 0;
-  let isActive = active;
-  const mark = marker;
+  let isActive = false;
+  let mark = null;
 
   const getScore = () => score;
 

@@ -1,4 +1,5 @@
 import Gameboard from "./Gameboard.js";
+import createPlayer from "./CreatePlayer.js";
 
 const GameController = (function () {
   const board = Gameboard;
@@ -7,13 +8,15 @@ const GameController = (function () {
      so we can store multiple users and add two
      in when startGame runs */
 
-  const addPlayer = (player) => {
-    if (players.length < 2) {
-      players.push(player);
-    } else {
-      throw new Error("Player count limit reached");
-    }
+  const addPlayers = (chosenPlayers) => {
+    chosenPlayers.forEach((player) => {
+      const newPlayerObj = createPlayer(player);
+      players.push(newPlayerObj);
+    });
+    console.log(players);
   };
+
+  const emptyPlayers = () => (players.length = 0);
 
   const getActivePlayer = () => {
     return players.find((player) => player.getActiveStatus());
@@ -50,7 +53,8 @@ const GameController = (function () {
 
   return {
     getField: board.getField,
-    addPlayer,
+    addPlayers,
+    emptyPlayers,
     switchActivePlayer /* delete? */,
     getActivePlayer,
     playRound,
