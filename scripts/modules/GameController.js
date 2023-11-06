@@ -1,5 +1,6 @@
 import Gameboard from "./Gameboard.js";
 import createPlayer from "./CreatePlayer.js";
+import GameDisplayController from "./GameDisplayController.js";
 
 const GameController = (function () {
   const board = Gameboard;
@@ -11,6 +12,7 @@ const GameController = (function () {
       const active = index !== 1;
       const newPlayerObj = createPlayer(player, marker, active);
       players.push(newPlayerObj);
+      console.log(players);
     });
   };
 
@@ -40,9 +42,8 @@ const GameController = (function () {
   };
 
   const endGame = (activePlayer) => {
-    /* x player wins! */
     activePlayer.incrementScore();
-
+    GameDisplayController.showGameOver(activePlayer, players);
     /* players.forEach((player) => {
       console.log(player.getScore());
     }); */

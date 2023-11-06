@@ -14,7 +14,7 @@ const UserController = (function () {
   const choosePlayersModal = document.querySelector("#choose-players-modal");
   const choosePlayersForm = document.querySelector("#choose-players-form");
   const choosePlayersList = document.querySelector("#choose-players-list");
-  const closePlayerModal = document.querySelector("#close-player-modal");
+  const closePlayersModal = document.querySelector("#close-player-modal");
 
   let users = ["Player 1", "Player 2"];
 
@@ -91,7 +91,7 @@ const UserController = (function () {
     choosePlayersModal.showModal()
   );
 
-  closePlayerModal.addEventListener("click", () => choosePlayersModal.close());
+  closePlayersModal.addEventListener("click", () => choosePlayersModal.close());
 
   return { getStoredUsers, populateUserLists };
 })();

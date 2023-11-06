@@ -3,6 +3,8 @@ import GameController from "./GameController.js";
 const GameDisplayController = (function () {
   const gameContainer = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
+  const gameOverModal = document.querySelector("#game-over-modal");
+  const winningPlayerMsg = document.querySelector("#winning-player-msg");
 
   const createFieldItem = () => {
     const btn = document.createElement("button");
@@ -41,9 +43,19 @@ const GameDisplayController = (function () {
     updateBoard(event.target, marker);
   };
 
+  const showGameOver = (activePlayer, players) => {
+    winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
+    gameOverModal.showModal();
+  };
+
   gameContainer.addEventListener("click", clickHandlerField);
 
-  return { createFieldItem, renderBoard, updateBoard, updateTurnDiv };
+  return {
+    renderBoard,
+    updateBoard,
+    updateTurnDiv,
+    showGameOver,
+  };
 })();
 
 export default GameDisplayController;
