@@ -1,5 +1,5 @@
 import GameController from "./GameController.js";
-import DisplayController from "./DisplayController.js";
+import GameDisplayController from "./GameDisplayController.js";
 
 const UserController = (function () {
   /* add users references */
@@ -71,8 +71,8 @@ const UserController = (function () {
       (option) => option.value
     );
     GameController.startGame(chosenPlayers);
-    DisplayController.renderBoard();
-    DisplayController.updateTurnDiv();
+    GameDisplayController.renderBoard();
+    GameDisplayController.updateTurnDiv();
     choosePlayersModal.close();
   };
 

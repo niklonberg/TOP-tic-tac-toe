@@ -1,6 +1,6 @@
 import GameController from "./GameController.js";
 
-const DisplayController = (function () {
+const GameDisplayController = (function () {
   const gameContainer = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
 
@@ -46,4 +46,4 @@ const DisplayController = (function () {
   return { createFieldItem, renderBoard, updateBoard, updateTurnDiv };
 })();
 
-export default DisplayController;
+export default GameDisplayController;

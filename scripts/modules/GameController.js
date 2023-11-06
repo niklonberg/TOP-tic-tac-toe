@@ -42,10 +42,11 @@ const GameController = (function () {
   const endGame = (activePlayer) => {
     /* x player wins! */
     activePlayer.incrementScore();
-    players.forEach((player) => {
+
+    /* players.forEach((player) => {
       console.log(player.getScore());
-    });
-    /* player1.getScore(), player2.getScore() */
+    }); */
+
     /* play again? button */
     /* if so, resetField() */
     /* empty players array */
