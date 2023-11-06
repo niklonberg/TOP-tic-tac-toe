@@ -6,6 +6,10 @@ const GameController = (function () {
   const board = Gameboard;
   const players = [];
 
+  const getPlayers = () => {
+    return players;
+  };
+
   const addPlayers = (chosenPlayers) => {
     chosenPlayers.forEach((player, index) => {
       const marker = index !== 1 ? "x" : "o";
@@ -55,8 +59,8 @@ const GameController = (function () {
   };
 
   return {
-    players /* remove this */,
     getField: board.getField,
+    getPlayers,
     addPlayers,
     emptyPlayers,
     switchActivePlayer /* delete? */,

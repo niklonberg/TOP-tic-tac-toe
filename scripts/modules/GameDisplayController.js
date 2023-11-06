@@ -5,6 +5,8 @@ const GameDisplayController = (function () {
   const playerTurnDiv = document.querySelector("#active-player");
   const gameOverModal = document.querySelector("#game-over-modal");
   const winningPlayerMsg = document.querySelector("#winning-player-msg");
+  const playerOneDiv = document.querySelector("#player-one");
+  const playerTwoDiv = document.querySelector("#player-two");
   const playAgainBtn = document.querySelector("#play-again");
 
   const createFieldItem = () => {
@@ -35,7 +37,7 @@ const GameDisplayController = (function () {
   const clickHandlerField = (event) => {
     const fieldIndex = event.target.dataset.index;
     console.log("active player is: ", GameController.getActivePlayer());
-    console.log("players are: ", GameController.players);
+    console.log("players are: ", GameController.getPlayers());
     const marker = GameController.getActivePlayer().getMarker();
 
     if (!fieldIndex) return;
@@ -43,6 +45,8 @@ const GameDisplayController = (function () {
     GameController.playRound(fieldIndex);
     updateBoard(event.target, marker);
   };
+
+  const updatePlayerDivs = () => {};
 
   const showGameOver = (activePlayer, players) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
