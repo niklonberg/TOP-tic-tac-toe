@@ -61,6 +61,9 @@ const UserController = (function () {
     const chosenPlayers = [...choosePlayersList.selectedOptions].map(
       (option) => option.value
     );
+
+    if (chosenPlayers.length > 2) chosenPlayers.length = 2;
+
     GameController.startGame(chosenPlayers);
     ModalController.closePlayersModal();
   };
