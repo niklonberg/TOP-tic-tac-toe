@@ -9,11 +9,13 @@ const ModalController = (function () {
 
   const showUserModal = () => addUserModal.showModal();
 
-  const showGameOverModal = () => gameOverModal.showModal();
-
   const closeUserModal = () => addUserModal.close();
 
   const closePlayersModal = () => choosePlayersModal.close();
+
+  const showGameOverModal = () => gameOverModal.showModal();
+
+  const closeGameOverModal = () => gameOverModal.close();
 
   addUserBtn.addEventListener("click", () => showUserModal());
 
@@ -22,7 +24,10 @@ const ModalController = (function () {
   closePlayersModalBtn.addEventListener("click", () => closePlayersModal());
 
   startNewGameBtns.forEach((btn) => {
-    btn.addEventListener("click", () => choosePlayersModal.showModal());
+    btn.addEventListener("click", () => {
+      choosePlayersModal.showModal();
+      closeGameOverModal();
+    });
   });
 
   return {

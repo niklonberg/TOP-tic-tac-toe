@@ -37,7 +37,7 @@ const GameController = (function () {
   };
 
   const startGame = (chosenPlayers) => {
-    emptyPlayers(); /* should not be be here */
+    emptyPlayers();
     addPlayers(chosenPlayers);
     GameDisplayController.renderBoard();
     GameDisplayController.updateTurnDiv();
@@ -45,6 +45,7 @@ const GameController = (function () {
 
   const endGame = (activePlayer) => {
     activePlayer.incrementScore();
+    board.resetField();
     GameDisplayController.updateGameOverModal(activePlayer, players);
 
     /* if so, resetField() */
