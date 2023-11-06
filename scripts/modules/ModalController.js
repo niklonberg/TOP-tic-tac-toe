@@ -34,6 +34,7 @@ const ModalController = (function () {
     closeUserModal,
     closePlayersModal,
     showGameOverModal,
+    closeGameOverModal,
   };
 })();
 

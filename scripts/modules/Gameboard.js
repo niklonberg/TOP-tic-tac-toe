@@ -39,9 +39,9 @@ const Gameboard = (function () {
     let winConditionMet = false;
 
     for (const combination of winningCombinations) {
-      winConditionMet = combination.every((index) => {
-        return gameField[index] === marker;
-      });
+      winConditionMet = combination.every(
+        (index) => gameField[index] === marker
+      );
 
       if (winConditionMet) {
         console.log("win condition was met: ", winConditionMet);

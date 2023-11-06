@@ -47,14 +47,11 @@ const GameController = (function () {
     activePlayer.incrementScore();
     board.resetField();
     GameDisplayController.updateGameOverModal(activePlayer, players);
-
-    /* if so, resetField() */
-    /* empty players array */
-    /* startGame() */
   };
 
   return {
     getField: board.getField,
+    resetField: board.resetField,
     emptyPlayers,
     getActivePlayer,
     playRound,

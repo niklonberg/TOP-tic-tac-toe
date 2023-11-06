@@ -54,6 +54,12 @@ const GameDisplayController = (function () {
     });
   };
 
+  const replayGame = () => {
+    ModalController.closeGameOverModal();
+    GameController.resetField();
+    renderBoard();
+  };
+
   const updateGameOverModal = (activePlayer, players) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
     updatePlayerDivs(players);
@@ -61,6 +67,8 @@ const GameDisplayController = (function () {
   };
 
   gameContainer.addEventListener("click", clickHandlerField);
+
+  playAgainBtn.addEventListener("click", replayGame);
 
   return {
     renderBoard,
