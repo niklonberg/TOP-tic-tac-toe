@@ -1,9 +1,9 @@
 import GameController from "./GameController.js";
+import ModalController from "./ModalController.js";
 
 const GameDisplayController = (function () {
   const gameContainer = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
-  const gameOverModal = document.querySelector("#game-over-modal");
   const winningPlayerMsg = document.querySelector("#winning-player-msg");
   const playerOneDiv = document.querySelector("#player-one");
   const playerTwoDiv = document.querySelector("#player-two");
@@ -53,10 +53,10 @@ const GameDisplayController = (function () {
     });
   };
 
-  const showGameOver = (activePlayer, players) => {
+  const updateGameOverModal = (activePlayer, players) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
     updatePlayerDivs(players);
-    gameOverModal.showModal();
+    ModalController.showGameOverModal();
   };
 
   gameContainer.addEventListener("click", clickHandlerField);
@@ -65,7 +65,7 @@ const GameDisplayController = (function () {
     renderBoard,
     updateBoard,
     updateTurnDiv,
-    showGameOver,
+    updateGameOverModal,
   };
 })();
 

@@ -39,11 +39,13 @@ const GameController = (function () {
   const startGame = (chosenPlayers) => {
     emptyPlayers();
     addPlayers(chosenPlayers);
+    GameDisplayController.renderBoard();
+    GameDisplayController.updateTurnDiv();
   };
 
   const endGame = (activePlayer) => {
     activePlayer.incrementScore();
-    GameDisplayController.showGameOver(activePlayer, players);
+    GameDisplayController.updateGameOverModal(activePlayer, players);
 
     /* if so, resetField() */
     /* empty players array */

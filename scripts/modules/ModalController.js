@@ -5,8 +5,11 @@ const ModalController = (function () {
   const startNewGameBtns = document.querySelectorAll(".start-game");
   const choosePlayersModal = document.querySelector("#choose-players-modal");
   const closePlayersModalBtn = document.querySelector("#close-player-modal");
+  const gameOverModal = document.querySelector("#game-over-modal");
 
   const showUserModal = () => addUserModal.showModal();
+
+  const showGameOverModal = () => gameOverModal.showModal();
 
   const closeUserModal = () => addUserModal.close();
 
@@ -23,9 +26,9 @@ const ModalController = (function () {
   });
 
   return {
-    showUserModal,
     closeUserModal,
     closePlayersModal,
+    showGameOverModal,
   };
 })();
 

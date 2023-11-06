@@ -1,11 +1,9 @@
 import GameController from "./GameController.js";
-import GameDisplayController from "./GameDisplayController.js";
 import ModalController from "./ModalController.js";
 
 const UserController = (function () {
   /* add users references */
   const userList = document.querySelector("#user-list");
-
   const addUserForm = document.querySelector("#add-user-form");
   const userNameInput = document.querySelector("#user-name");
 
@@ -64,8 +62,6 @@ const UserController = (function () {
       (option) => option.value
     );
     GameController.startGame(chosenPlayers);
-    GameDisplayController.renderBoard();
-    GameDisplayController.updateTurnDiv();
     ModalController.closePlayersModal();
   };
 
