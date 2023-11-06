@@ -5,6 +5,7 @@ const GameDisplayController = (function () {
   const playerTurnDiv = document.querySelector("#active-player");
   const gameOverModal = document.querySelector("#game-over-modal");
   const winningPlayerMsg = document.querySelector("#winning-player-msg");
+  const playAgainBtn = document.querySelector("#play-again");
 
   const createFieldItem = () => {
     const btn = document.createElement("button");
@@ -45,6 +46,7 @@ const GameDisplayController = (function () {
 
   const showGameOver = (activePlayer, players) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
+    players.forEach((player) => {});
     gameOverModal.showModal();
   };
 

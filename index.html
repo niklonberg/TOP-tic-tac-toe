@@ -23,7 +23,7 @@
       </dialog>
     </div>
     <div id="new-game">
-      <button id="start-game">Start new game</button>
+      <button class="start-game">Start new game</button>
       <dialog id="choose-players-modal">
         <button id="close-player-modal">Close</button>
         <form action="#" id="choose-players-form">
@@ -37,9 +37,11 @@
       <div id="active-player"></div>
       <div id="game-board"></div>
     </div>
-    <dialog id="game-over-modal">
+    <dialog open id="game-over-modal">
       <p id="winning-player-msg"></p>
       <div id="score-status"></div>
+      <button id="play-again">Play again</button>
+      <button class="start-game">Start new game</button>
     </dialog>
     <script src="app.js" type="module"></script>
   </body>

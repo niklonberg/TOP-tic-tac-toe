@@ -10,7 +10,7 @@ const UserController = (function () {
   const userNameInput = document.querySelector("#user-name");
   const closeUserModalBtn = document.querySelector("#close-user-modal");
   /* choose players references */
-  const startNewGameBtn = document.querySelector("#start-game");
+  const startNewGameBtns = document.querySelectorAll(".start-game");
   const choosePlayersModal = document.querySelector("#choose-players-modal");
   const choosePlayersForm = document.querySelector("#choose-players-form");
   const choosePlayersList = document.querySelector("#choose-players-list");
@@ -87,9 +87,9 @@ const UserController = (function () {
 
   choosePlayersList.addEventListener("change", limitMaxPlayerSelection);
 
-  startNewGameBtn.addEventListener("click", () =>
-    choosePlayersModal.showModal()
-  );
+  startNewGameBtns.forEach((btn) => {
+    btn.addEventListener("click", () => choosePlayersModal.showModal());
+  });
 
   closePlayersModal.addEventListener("click", () => choosePlayersModal.close());
 
