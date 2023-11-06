@@ -43,6 +43,10 @@ const GameController = (function () {
     GameDisplayController.updateTurnDiv();
   };
 
+  const replayGame = () => {
+    board.resetField();
+  };
+
   const endGame = (activePlayer) => {
     activePlayer.incrementScore();
     board.resetField();
@@ -51,7 +55,7 @@ const GameController = (function () {
 
   return {
     getField: board.getField,
-    resetField: board.resetField,
+    replayGame,
     emptyPlayers,
     getActivePlayer,
     playRound,

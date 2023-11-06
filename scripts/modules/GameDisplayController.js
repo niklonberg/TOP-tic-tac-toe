@@ -54,9 +54,9 @@ const GameDisplayController = (function () {
     });
   };
 
-  const replayGame = () => {
+  const playAgain = () => {
     ModalController.closeGameOverModal();
-    GameController.resetField();
+    GameController.replayGame();
     renderBoard();
   };
 
@@ -68,7 +68,7 @@ const GameDisplayController = (function () {
 
   gameContainer.addEventListener("click", clickHandlerField);
 
-  playAgainBtn.addEventListener("click", replayGame);
+  playAgainBtn.addEventListener("click", playAgain);
 
   return {
     renderBoard,
