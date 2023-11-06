@@ -44,10 +44,18 @@ const GameDisplayController = (function () {
     updateBoard(event.target, marker);
   };
 
-  const updatePlayerDivs = () => {};
+  const updatePlayerDivs = (players) => {
+    players.forEach((player, index) => {
+      const playerDivToUpdate = index === 0 ? playerOneDiv : playerTwoDiv;
+      playerDivToUpdate.innerHTML = `<h2>${player.name}</h2>
+         <p>Score: ${player.getScore()}</p>
+        `;
+    });
+  };
 
-  const showGameOver = (activePlayer) => {
+  const showGameOver = (activePlayer, players) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
+    updatePlayerDivs(players);
     gameOverModal.showModal();
   };
 

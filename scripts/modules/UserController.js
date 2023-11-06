@@ -1,20 +1,17 @@
 import GameController from "./GameController.js";
 import GameDisplayController from "./GameDisplayController.js";
+import ModalController from "./ModalController.js";
 
 const UserController = (function () {
   /* add users references */
   const userList = document.querySelector("#user-list");
-  const addUserBtn = document.querySelector("#add-user");
-  const addUserModal = document.querySelector("#add-user-modal");
+
   const addUserForm = document.querySelector("#add-user-form");
   const userNameInput = document.querySelector("#user-name");
-  const closeUserModalBtn = document.querySelector("#close-user-modal");
+
   /* choose players references */
-  const startNewGameBtns = document.querySelectorAll(".start-game");
-  const choosePlayersModal = document.querySelector("#choose-players-modal");
   const choosePlayersForm = document.querySelector("#choose-players-form");
   const choosePlayersList = document.querySelector("#choose-players-list");
-  const closePlayersModal = document.querySelector("#close-player-modal");
 
   let users = ["Player 1", "Player 2"];
 
@@ -52,16 +49,12 @@ const UserController = (function () {
     event.preventDefault();
     addLatestUser(userNameInput.value);
     userNameInput.value = "";
-    addUserModal.close();
+    ModalController.closeUserModal();
   };
 
   addUserForm.addEventListener("submit", (event) => {
     clickAddUserFormSubmit(event);
   });
-
-  addUserBtn.addEventListener("click", () => addUserModal.showModal());
-
-  closeUserModalBtn.addEventListener("click", () => addUserModal.close());
 
   /* choose players funcs & listeners */
 
@@ -73,7 +66,7 @@ const UserController = (function () {
     GameController.startGame(chosenPlayers);
     GameDisplayController.renderBoard();
     GameDisplayController.updateTurnDiv();
-    choosePlayersModal.close();
+    ModalController.closePlayersModal();
   };
 
   const limitMaxPlayerSelection = () => {
@@ -86,12 +79,6 @@ const UserController = (function () {
   });
 
   choosePlayersList.addEventListener("change", limitMaxPlayerSelection);
-
-  startNewGameBtns.forEach((btn) => {
-    btn.addEventListener("click", () => choosePlayersModal.showModal());
-  });
-
-  closePlayersModal.addEventListener("click", () => choosePlayersModal.close());
 
   return { getStoredUsers, populateUserLists };
 })();
