@@ -37,6 +37,7 @@ const GameController = (function () {
   };
 
   const startGame = (chosenPlayers) => {
+    board.resetField();
     emptyPlayers();
     addPlayers(chosenPlayers);
     GameDisplayController.renderBoard();
