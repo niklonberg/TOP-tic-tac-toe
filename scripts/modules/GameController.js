@@ -37,7 +37,7 @@ const GameController = (function () {
   };
 
   const startGame = (chosenPlayers) => {
-    emptyPlayers();
+    emptyPlayers(); /* should not be be here */
     addPlayers(chosenPlayers);
     GameDisplayController.renderBoard();
     GameDisplayController.updateTurnDiv();

@@ -16,6 +16,7 @@ const GameDisplayController = (function () {
   };
 
   const renderBoard = () => {
+    gameContainer.innerHTML = "";
     GameController.getField().forEach((_, index) => {
       const btn = createFieldItem();
       btn.dataset.index = index;
