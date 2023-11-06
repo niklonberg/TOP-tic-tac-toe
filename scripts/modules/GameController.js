@@ -6,10 +6,6 @@ const GameController = (function () {
   const board = Gameboard;
   const players = [];
 
-  const getPlayers = () => {
-    return players;
-  };
-
   const addPlayers = (chosenPlayers) => {
     chosenPlayers.forEach((player, index) => {
       const marker = index !== 1 ? "x" : "o";
@@ -48,11 +44,7 @@ const GameController = (function () {
   const endGame = (activePlayer) => {
     activePlayer.incrementScore();
     GameDisplayController.showGameOver(activePlayer, players);
-    /* players.forEach((player) => {
-      console.log(player.getScore());
-    }); */
 
-    /* play again? button */
     /* if so, resetField() */
     /* empty players array */
     /* startGame() */
@@ -60,10 +52,7 @@ const GameController = (function () {
 
   return {
     getField: board.getField,
-    getPlayers,
-    addPlayers,
     emptyPlayers,
-    switchActivePlayer /* delete? */,
     getActivePlayer,
     playRound,
     startGame,

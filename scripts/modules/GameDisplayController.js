@@ -36,8 +36,6 @@ const GameDisplayController = (function () {
 
   const clickHandlerField = (event) => {
     const fieldIndex = event.target.dataset.index;
-    console.log("active player is: ", GameController.getActivePlayer());
-    console.log("players are: ", GameController.getPlayers());
     const marker = GameController.getActivePlayer().getMarker();
 
     if (!fieldIndex) return;
@@ -48,9 +46,8 @@ const GameDisplayController = (function () {
 
   const updatePlayerDivs = () => {};
 
-  const showGameOver = (activePlayer, players) => {
+  const showGameOver = (activePlayer) => {
     winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
-    players.forEach((player) => {});
     gameOverModal.showModal();
   };
 
