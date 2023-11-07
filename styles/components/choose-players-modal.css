@@ -1,10 +1,28 @@
 @layer component {
   #choose-players-modal {
+    position: relative;
+    padding: calc(var(--l-gap) * 1.5);
+    background-color: var(--yellow);
+  }
+
+  #close-player-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 
   #choose-players-form {
     display: grid;
     gap: var(--sm-gap);
     place-items: center;
+  }
+
+  #choose-players-list {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #choose-players-list > * {
+    margin-bottom: 5px;
   }
 }
