@@ -1,0 +1,35 @@
+@layer base {
+  :root {
+    --primary: #1a2b33;
+    --secondary: #1e3640;
+    --grey: #a9bec8;
+    --dark-cyan: #34c3be;
+    --lighten-yellow: #f2b138;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--light-surface-color);
+    margin: 0;
+  }
+
+  input,
+  textarea,
+  button,
+  select {
+    font: inherit;
+    font-size: 100%;
+  }
+
+  .ax-btn {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+  }
+}
