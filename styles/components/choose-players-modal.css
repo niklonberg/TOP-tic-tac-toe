@@ -1,0 +1,10 @@
+@layer component {
+  #choose-players-modal {
+  }
+
+  #choose-players-form {
+    display: grid;
+    gap: var(--sm-gap);
+    place-items: center;
+  }
+}
