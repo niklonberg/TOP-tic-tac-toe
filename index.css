@@ -5,5 +5,5 @@
 @import url(./styles/components/modal.css);
 @import url(./styles/components/start-game.css);
 @import url(./styles/components/choose-players-modal.css);
-@import url(./styles/components/game.css);
-@import url(./styles/components/gameboard.css);
+@import url(./styles/components/game-container.css);
+@import url(./styles/components/game-board.css);

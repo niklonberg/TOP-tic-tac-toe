@@ -1,7 +1,7 @@
 @layer base {
   :root {
     --primary: #1a2b33;
-    --secondary: #1e3640;
+    --secondary: #25404d;
     --grey: #a9bec8;
     --dark-cyan: #34c3be;
     --yellow: #ebab34;
@@ -10,6 +10,8 @@
     --sm-gap: 10px;
     --m-gap: 20px;
     --l-gap: 30px;
+
+    --sm-br: 5px;
   }
 
   *,
