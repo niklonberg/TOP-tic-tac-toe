@@ -2,7 +2,7 @@ import GameController from "./GameController.js";
 import ModalController from "./ModalController.js";
 
 const GameDisplayController = (function () {
-  const gameContainer = document.querySelector("#game-board");
+  const gameBoard = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
   const winningPlayerMsg = document.querySelector("#winning-player-msg");
   const playerOneDiv = document.querySelector("#player-one");
@@ -16,11 +16,11 @@ const GameDisplayController = (function () {
   };
 
   const renderBoard = () => {
-    gameContainer.innerHTML = "";
+    gameBoard.innerHTML = "";
     GameController.getField().forEach((_, index) => {
       const btn = createFieldItem();
       btn.dataset.index = index;
-      gameContainer.appendChild(btn);
+      gameBoard.appendChild(btn);
     });
   };
 
@@ -46,6 +46,13 @@ const GameDisplayController = (function () {
     updateBoard(event.target, marker);
   };
 
+  const hoverPreviewFieldMarker = (event) => {
+    if (event.target.tagName === "BUTTON") {
+      const field = event.target;
+      const marker = GameController.getActivePlayer().getMarker();
+    }
+  };
+
   const updatePlayerDivs = (players) => {
     players.forEach((player, index) => {
       const playerDivToUpdate = index === 0 ? playerOneDiv : playerTwoDiv;
@@ -67,7 +74,9 @@ const GameDisplayController = (function () {
     ModalController.showGameOverModal();
   };
 
-  gameContainer.addEventListener("click", clickHandlerField);
+  gameBoard.addEventListener("click", clickHandlerField);
+
+  gameBoard.addEventListener("mouseover", hoverPreviewFieldMarker);
 
   playAgainBtn.addEventListener("click", playAgain);
 
