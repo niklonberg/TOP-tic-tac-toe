@@ -1,7 +1,7 @@
 @layer component {
-  #game-container {
+  #new-game-container {
     display: grid;
-    gap: 20px;
     place-items: center;
+    margin-block: 20px;
   }
 }
