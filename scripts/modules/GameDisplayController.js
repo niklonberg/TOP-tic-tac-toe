@@ -56,7 +56,7 @@ const GameDisplayController = (function () {
 
   const playAgain = () => {
     ModalController.closeGameOverModal();
-    GameController.replayGame();
+    GameController.resetField();
     renderBoard();
   };
 
