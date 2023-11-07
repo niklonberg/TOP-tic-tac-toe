@@ -46,8 +46,7 @@ const GameDisplayController = (function () {
 
   const hoverPreviewFieldMarker = (event) => {
     if (event.target.tagName === "BUTTON") {
-      const field = event.target;
-      const marker = GameController.getActivePlayer().getMarker();
+      /* show marker preview here */
     }
   };
 
