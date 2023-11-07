@@ -25,7 +25,8 @@ const GameDisplayController = (function () {
   };
 
   const updateBoard = (element, marker) => {
-    element.textContent = marker;
+    const classToAdd = marker === "x" ? "cross" : "circle";
+    element.classList.add("marked", classToAdd);
     updateTurnDiv();
   };
 

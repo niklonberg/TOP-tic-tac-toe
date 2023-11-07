@@ -1,0 +1,15 @@
+@layer component {
+  .marked {
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+  }
+
+  .cross {
+    background-image: url(/assets/svg/icon-x.svg);
+  }
+
+  .circle {
+    background-image: url(/assets/svg/icon-o.svg);
+  }
+}

@@ -9,7 +9,7 @@
   }
 
   #game-board button {
-    all: unset;
+    /* all: unset; */
     outline: revert;
     box-sizing: border-box;
     background-color: var(--secondary);
