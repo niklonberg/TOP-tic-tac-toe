@@ -10,9 +10,7 @@ const GameDisplayController = (function () {
   const playAgainBtn = document.querySelector("#play-again");
 
   const createFieldItem = () => {
-    const btn = document.createElement("button");
-    /* add class, id etc. */
-    return btn;
+    return document.createElement("button");
   };
 
   const renderBoard = () => {
