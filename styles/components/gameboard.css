@@ -1,7 +1,5 @@
 @layer component {
   #game-board {
-    background-color: yellow;
-    padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);

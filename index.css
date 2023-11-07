@@ -1,4 +1,6 @@
 @layer base, component;
 
 @import url(./styles/components/base.css);
+@import url(./styles/components/container.css);
+@import url(./styles/components/game.css);
 @import url(./styles/components/gameboard.css);
