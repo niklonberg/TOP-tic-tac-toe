@@ -2,6 +2,7 @@
 
 @import url(./styles/components/base.css);
 @import url(./styles/components/container.css);
+@import url(./styles/components/modal.css);
 @import url(./styles/components/start-game.css);
 @import url(./styles/components/choose-players-modal.css);
 @import url(./styles/components/game.css);

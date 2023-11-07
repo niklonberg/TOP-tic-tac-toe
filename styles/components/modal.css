@@ -1,0 +1,9 @@
+@layer component {
+  .modal {
+    padding: calc(var(--l-gap) * 1.5);
+    background-color: var(--yellow);
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: var(--primary-contrast);
+  }
+}

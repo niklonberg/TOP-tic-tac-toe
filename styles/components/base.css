@@ -5,6 +5,7 @@
     --grey: #a9bec8;
     --dark-cyan: #34c3be;
     --yellow: #ebab34;
+    --primary-contrast: white;
 
     --sm-gap: 10px;
     --m-gap: 20px;
@@ -20,7 +21,7 @@
   body {
     font-family: system-ui, sans-serif;
     background-color: var(--primary);
-    color: white;
+    color: var(--primary-contrast);
     margin: 0;
   }
 

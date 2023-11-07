@@ -1,8 +1,6 @@
 @layer component {
   #choose-players-modal {
     position: relative;
-    padding: calc(var(--l-gap) * 1.5);
-    background-color: var(--yellow);
   }
 
   #close-player-modal {
@@ -19,7 +17,7 @@
 
   #choose-players-list {
     width: 100%;
-    padding: 10px;
+    padding: var(--sm-gap);
   }
 
   #choose-players-list > * {
