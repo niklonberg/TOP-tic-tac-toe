@@ -49,11 +49,14 @@ const Gameboard = (function () {
         break;
       }
     }
-
     return winConditionMet;
   };
 
-  return { getField, resetField, addMarker, checkForWin };
+  const checkForTie = () => {
+    return gameField.every((index) => index !== null);
+  };
+
+  return { getField, resetField, addMarker, checkForWin, checkForTie };
 })();
 
 export default Gameboard;

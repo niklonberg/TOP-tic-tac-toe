@@ -31,6 +31,8 @@ const GameController = (function () {
     board.addMarker(index, activePlayer);
     console.log(board.getField());
     const winConditionMet = board.checkForWin(activePlayer);
+    const tieConditionMet = board.checkForTie();
+    if (tieConditionMet && !winConditionMet) console.log("its a tie");
     winConditionMet
       ? (console.log("game is over!"), endGame(activePlayer))
       : switchActivePlayer();
