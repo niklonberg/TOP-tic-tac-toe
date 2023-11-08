@@ -53,11 +53,13 @@ const GameController = (function () {
 
   const winGame = (activePlayer) => {
     activePlayer.incrementScore();
+    switchActivePlayer();
     board.resetField();
     GameDisplayController.showGameOverModal(activePlayer, players, true);
   };
 
   const tieGame = () => {
+    switchActivePlayer();
     board.resetField();
     GameDisplayController.showGameOverModal(null, players, false);
   };

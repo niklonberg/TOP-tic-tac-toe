@@ -4,7 +4,7 @@ import ModalController from "./ModalController.js";
 const GameDisplayController = (function () {
   const gameBoard = document.querySelector("#game-board");
   const playerTurnDiv = document.querySelector("#active-player");
-  const winningPlayerMsg = document.querySelector("#winning-player-msg");
+  const gameOverMsg = document.querySelector("#game-over-msg");
   const playerOneDiv = document.querySelector("#player-one");
   const playerTwoDiv = document.querySelector("#player-two");
   const playAgainBtn = document.querySelector("#play-again");
@@ -79,11 +79,11 @@ const GameDisplayController = (function () {
 
   const showGameOverModal = (activePlayer, players, isWin) => {
     if (isWin) {
-      winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, you won!`;
+      gameOverMsg.textContent = `Congrats ${activePlayer.name}, you won!`;
+      updatePlayerDivs(players);
     } else {
-      winningPlayerMsg.textContent = "It's a tie!";
+      gameOverMsg.textContent = "It's a tie!";
     }
-    updatePlayerDivs(players);
     ModalController.showGameOverModal();
   };
 

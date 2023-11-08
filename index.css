@@ -6,5 +6,6 @@
 @import url(./styles/components/markers.css);
 @import url(./styles/components/new-game-container.css);
 @import url(./styles/components/choose-players-modal.css);
+@import url(./styles/components/game-over-modal.css);
 @import url(./styles/components/game-container.css);
 @import url(./styles/components/game-board.css);

@@ -1,7 +1,19 @@
 @layer component {
-  #game-over-modal {
+  #game-over-msg {
+    text-align: center;
+    margin-top: 0;
   }
 
   #score-status {
+    display: grid;
+    gap: var(--l-gap);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    place-items: center;
+    margin-bottom: var(--m-gap);
+  }
+
+  #score-status > * {
+    text-align: center;
   }
 }
