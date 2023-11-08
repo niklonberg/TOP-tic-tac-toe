@@ -32,7 +32,12 @@ const GameController = (function () {
     console.log(board.getField());
     const winConditionMet = board.checkForWin(activePlayer);
     const tieConditionMet = board.checkForTie();
-    if (tieConditionMet && !winConditionMet) console.log("its a tie");
+
+    if (tieConditionMet && !winConditionMet) {
+      tieGame();
+      return;
+    }
+
     winConditionMet
       ? (console.log("game is over!"), winGame(activePlayer))
       : switchActivePlayer();
@@ -49,7 +54,12 @@ const GameController = (function () {
   const winGame = (activePlayer) => {
     activePlayer.incrementScore();
     board.resetField();
-    GameDisplayController.updateGameOverModal(activePlayer, players);
+    GameDisplayController.showGameOverModal(activePlayer, players, true);
+  };
+
+  const tieGame = () => {
+    board.resetField();
+    GameDisplayController.showGameOverModal(null, players, false);
   };
 
   return {

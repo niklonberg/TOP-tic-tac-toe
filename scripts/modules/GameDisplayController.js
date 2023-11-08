@@ -77,8 +77,12 @@ const GameDisplayController = (function () {
     renderBoard();
   };
 
-  const updateGameOverModal = (activePlayer, players) => {
-    winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, they won!`;
+  const showGameOverModal = (activePlayer, players, isWin) => {
+    if (isWin) {
+      winningPlayerMsg.textContent = `Congrats ${activePlayer.name}, you won!`;
+    } else {
+      winningPlayerMsg.textContent = "It's a tie!";
+    }
     updatePlayerDivs(players);
     ModalController.showGameOverModal();
   };
@@ -91,7 +95,7 @@ const GameDisplayController = (function () {
     renderBoard,
     updateBoard,
     updateTurnDiv,
-    updateGameOverModal,
+    showGameOverModal,
   };
 })();
 
