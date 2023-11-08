@@ -16,4 +16,10 @@
   #score-status > * {
     text-align: center;
   }
+
+  #play-buttons-container {
+    display: grid;
+    justify-content: center;
+    gap: var(--m-gap);
+  }
 }
