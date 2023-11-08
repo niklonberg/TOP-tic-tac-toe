@@ -25,6 +25,7 @@ const GameDisplayController = (function () {
 
   const updateBoard = (element, marker) => {
     const classToAdd = marker === "x" ? "cross" : "circle";
+    element.className = "";
     element.classList.add("marked", classToAdd);
     updateTurnDiv();
   };
@@ -48,12 +49,16 @@ const GameDisplayController = (function () {
   const addHoverPreviewMarkerListeners = (btn) => {
     btn.addEventListener("mouseover", () => {
       if (!btn.classList.contains("marked")) {
-        btn.style.backgroundImage = `url(/assets/svg/icon-${GameController.getActivePlayer().getMarker()}-outline.svg)`;
+        btn.classList.add(
+          `${GameController.getActivePlayer().getMarker()}-outline`
+        );
       }
     });
 
     btn.addEventListener("mouseout", () => {
-      btn.style.backgroundImage = "";
+      btn.classList.remove(
+        `${GameController.getActivePlayer().getMarker()}-outline`
+      );
     });
   };
 
