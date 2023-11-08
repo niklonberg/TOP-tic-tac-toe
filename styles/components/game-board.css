@@ -18,5 +18,8 @@
   }
 
   #game-board button:hover {
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
   }
 }

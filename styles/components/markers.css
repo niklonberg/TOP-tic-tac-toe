@@ -9,15 +9,7 @@
     background-image: url(/assets/svg/icon-x.svg);
   }
 
-  .cross-outline {
-    background-image: url(/assets/svg/icon-x-outline.svg);
-  }
-
   .circle {
     background-image: url(/assets/svg/icon-o.svg);
-  }
-
-  .circle-outline {
-    background-image: url(/assets/svg/icon-o-outline.svg);
   }
 }

@@ -18,6 +18,7 @@ const GameDisplayController = (function () {
     GameController.getField().forEach((_, index) => {
       const btn = createFieldItem();
       btn.dataset.index = index;
+      addHoverPreviewMarkerListeners(btn);
       gameBoard.appendChild(btn);
     });
   };
@@ -44,10 +45,16 @@ const GameDisplayController = (function () {
     updateBoard(event.target, marker);
   };
 
-  const hoverPreviewFieldMarker = (event) => {
-    if (event.target.tagName === "BUTTON") {
-      /* show marker preview here */
-    }
+  const addHoverPreviewMarkerListeners = (btn) => {
+    btn.addEventListener("mouseover", () => {
+      if (!btn.classList.contains("marked")) {
+        btn.style.backgroundImage = `url(/assets/svg/icon-${GameController.getActivePlayer().getMarker()}-outline.svg)`;
+      }
+    });
+
+    btn.addEventListener("mouseout", () => {
+      btn.style.backgroundImage = "";
+    });
   };
 
   const updatePlayerDivs = (players) => {
@@ -72,8 +79,6 @@ const GameDisplayController = (function () {
   };
 
   gameBoard.addEventListener("click", clickHandlerField);
-
-  gameBoard.addEventListener("mouseover", hoverPreviewFieldMarker);
 
   playAgainBtn.addEventListener("click", playAgain);
 
