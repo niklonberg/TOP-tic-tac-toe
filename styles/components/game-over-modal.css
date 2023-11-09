@@ -1,25 +1,50 @@
 @layer component {
   #game-over-msg {
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.2px;
     margin-top: 0;
   }
 
   #score-status {
     display: grid;
     gap: var(--l-gap);
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    place-items: center;
     margin-bottom: var(--m-gap);
   }
 
   #score-status > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
+    background-color: var(--grey);
+    border-radius: var(--sm-br);
+    padding-inline: var(--m-gap);
+  }
+
+  #score-status > *:first-child {
+    background-color: var(--dark-cyan);
+  }
+
+  #score-status > *:last-child {
+    background-color: var(--yellow);
+  }
+
+  #score-status h2 {
+    margin-bottom: 0;
   }
 
   #play-buttons-container {
     display: grid;
     justify-content: center;
     gap: var(--m-gap);
+  }
+
+  @media (min-width: 700px) {
+    #score-status {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
   }
 }

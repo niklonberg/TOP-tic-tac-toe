@@ -1,10 +1,11 @@
 @layer base {
   :root {
-    --primary: #1a2b32;
-    --secondary: #25404d;
-    --grey: #a9bec8;
-    --dark-cyan: #34c3be;
-    --yellow: #ebab34;
+    --primary: rgb(26, 43, 50);
+    --secondary: rgb(37, 64, 77);
+    --tertiary: rgb(41, 107, 122);
+    --grey: rgb(169, 190, 200);
+    --dark-cyan: rgb(52, 195, 190);
+    --yellow: rgb(235, 171, 52);
     --primary-contrast: white;
 
     --sm-gap: 10px;

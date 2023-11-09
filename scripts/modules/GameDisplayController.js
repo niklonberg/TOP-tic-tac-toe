@@ -38,7 +38,6 @@ const GameDisplayController = (function () {
   };
 
   const updateTieDiv = () => {
-    console.log("I am being run");
     tieCountDiv.innerHTML = `<h2>Tie count</h2>
     <p>${GameController.getTieCount()}</p>
     `;
