@@ -1,0 +1,36 @@
+@layer component {
+  #header-layout {
+    padding: var(--l-gap);
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  #users {
+  }
+
+  #user-list {
+    position: fixed;
+    bottom: 80px;
+    right: -100;
+    background-color: red;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    max-height: 125px;
+    overflow-y: scroll;
+  }
+
+  #user-list li {
+    margin-bottom: var(--sm-gap);
+  }
+
+  #user-list.show-users {
+    transform: translateX(50%);
+    right: 50%;
+  }
+
+  #add-user {
+  }
+}

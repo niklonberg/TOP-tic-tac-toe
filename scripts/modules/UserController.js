@@ -3,6 +3,7 @@ import ModalController from "./ModalController.js";
 
 const UserController = (function () {
   /* add users references */
+  const addUserBtn = document.querySelector("#add-user");
   const userList = document.querySelector("#user-list");
   const addUserForm = document.querySelector("#add-user-form");
   const userNameInput = document.querySelector("#user-name");
@@ -53,6 +54,20 @@ const UserController = (function () {
   addUserForm.addEventListener("submit", (event) => {
     clickAddUserFormSubmit(event);
   });
+
+  addUserBtn.addEventListener("click", () => {
+    userList.classList.add("show-users");
+  });
+
+  function scrollContent() {
+    userList.scrollTop += 1;
+
+    if (userList.scrollTop >= userList.scrollHeight - userList.clientHeight) {
+      userList.scrollTop = 0;
+    }
+  }
+
+  setInterval(scrollContent, 150);
 
   /* choose players funcs & listeners */
 
