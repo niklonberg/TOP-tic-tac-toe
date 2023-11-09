@@ -38,8 +38,8 @@ const GameDisplayController = (function () {
   };
 
   const updateTieDiv = () => {
-    tieCountDiv.innerHTML = `<h2>Tie count</h2>
-    <p>${GameController.getTieCount()}</p>
+    tieCountDiv.innerHTML = `<h2>Ties</h2>
+    <p>Count: ${GameController.getTieCount()}</p>
     `;
   };
 
