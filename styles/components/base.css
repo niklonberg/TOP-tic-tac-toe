@@ -35,10 +35,4 @@
     font: inherit;
     font-size: 100%;
   }
-
-  .ax-btn {
-    all: unset;
-    outline: revert;
-    box-sizing: border-box;
-  }
 }

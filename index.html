@@ -10,9 +10,9 @@
     <header id="header">
       <div class="container" id="header-layout">
         <img src="/assets/svg/logo.svg" alt="" />
-        <button class="start-game">Start new game</button>
+        <button class="btn start-game">Start new game</button>
         <div id="users">
-          <button id="add-user">Add user</button>
+          <button class="btn" id="add-user">Add user</button>
           <ul id="user-list"></ul>
         </div>
       </div>
@@ -23,19 +23,19 @@
     </main>
     <div id="dialogs">
       <dialog class="modal" id="add-user-modal">
-        <button id="close-user-modal" class="close-modal">Close</button>
+        <button class="btn close-modal" id="close-user-modal">Close</button>
         <form id="add-user-form" action="#">
           <label for="user-name">Add User</label>
           <input type="text" name="name" id="user-name" />
-          <button type="submit">Add</button>
+          <button class="btn" type="submit">Add</button>
         </form>
       </dialog>
       <dialog class="modal" id="choose-players-modal">
-        <button id="close-player-modal" class="close-modal">Close</button>
+        <button class="btn close-modal" id="close-player-modal">Close</button>
         <form action="#" id="choose-players-form">
           <label for="choose-players">Choose two players:</label>
           <select name="players" id="choose-players-list" multiple></select>
-          <button type="submit">Submit</button>
+          <button class="btn" type="submit">Submit</button>
         </form>
       </dialog>
       <dialog class="modal" id="game-over-modal">
@@ -49,8 +49,8 @@
           <div id="player-two"></div>
         </div>
         <div id="play-buttons-container">
-          <button id="play-again">Play again</button>
-          <button class="start-game">Start new game</button>
+          <button class="btn" id="play-again">Play again</button>
+          <button class="btn start-game">Start new game</button>
         </div>
       </dialog>
     </div>

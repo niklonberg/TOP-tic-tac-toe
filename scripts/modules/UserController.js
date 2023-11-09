@@ -53,6 +53,7 @@ const UserController = (function () {
 
   addUserForm.addEventListener("submit", (event) => {
     clickAddUserFormSubmit(event);
+    userList.classList.remove("show-users");
   });
 
   addUserBtn.addEventListener("click", () => {

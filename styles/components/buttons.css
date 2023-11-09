@@ -1,0 +1,8 @@
+@layer component {
+  .btn {
+    background-color: orange;
+    padding: 0.25em 0.75em;
+    border-radius: 100px;
+    border: 0;
+  }
+}

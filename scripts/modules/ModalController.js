@@ -1,6 +1,7 @@
 const ModalController = (function () {
   const addUserBtn = document.querySelector("#add-user");
   const addUserModal = document.querySelector("#add-user-modal");
+  const userList = document.querySelector("#user-list");
   const closeUserModalBtn = document.querySelector("#close-user-modal");
   const startNewGameBtns = document.querySelectorAll(".start-game");
   const choosePlayersModal = document.querySelector("#choose-players-modal");
@@ -19,7 +20,10 @@ const ModalController = (function () {
 
   addUserBtn.addEventListener("click", () => showUserModal());
 
-  closeUserModalBtn.addEventListener("click", () => closeUserModal());
+  closeUserModalBtn.addEventListener("click", () => {
+    closeUserModal();
+    userList.classList.remove("show-users");
+  });
 
   closePlayersModalBtn.addEventListener("click", () => closePlayersModal());
 
