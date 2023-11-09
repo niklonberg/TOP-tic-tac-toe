@@ -1,0 +1,12 @@
+@layer component {
+  #add-user-form {
+    display: grid;
+    gap: var(--sm-gap);
+    place-items: center;
+  }
+
+  #user-name {
+    min-width: 100px;
+    border-radius: var(--sm-br);
+  }
+}
