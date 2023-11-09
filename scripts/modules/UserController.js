@@ -80,6 +80,8 @@ const UserController = (function () {
 
     if (chosenPlayers.length > 2) chosenPlayers.length = 2;
 
+    if (chosenPlayers.length < 2) return;
+
     GameController.startGame(chosenPlayers);
     ModalController.closePlayersModal();
   };
