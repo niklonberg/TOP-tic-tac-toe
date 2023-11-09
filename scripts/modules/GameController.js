@@ -5,6 +5,7 @@ import GameDisplayController from "./GameDisplayController.js";
 const GameController = (function () {
   const board = Gameboard;
   const players = [];
+  let tieCount = 0;
 
   const addPlayers = (chosenPlayers) => {
     chosenPlayers.forEach((player, index) => {
@@ -26,6 +27,12 @@ const GameController = (function () {
     players.forEach((player) => player.switchActiveStatus());
   };
 
+  const getTieCount = () => tieCount;
+
+  const resetTieCount = () => (tieCount = 0);
+
+  const incrementTieCount = () => ++tieCount;
+
   const playRound = (index) => {
     const activePlayer = getActivePlayer();
     board.addMarker(index, activePlayer);
@@ -45,6 +52,7 @@ const GameController = (function () {
 
   const startGame = (chosenPlayers) => {
     board.resetField();
+    resetTieCount();
     emptyPlayers();
     addPlayers(chosenPlayers);
     GameDisplayController.renderBoard();
@@ -59,6 +67,7 @@ const GameController = (function () {
   };
 
   const tieGame = () => {
+    incrementTieCount();
     switchActivePlayer();
     board.resetField();
     GameDisplayController.showGameOverModal(null, players, false);
@@ -67,6 +76,7 @@ const GameController = (function () {
   return {
     getField: board.getField,
     resetField: board.resetField,
+    getTieCount,
     getActivePlayer,
     playRound,
     startGame,

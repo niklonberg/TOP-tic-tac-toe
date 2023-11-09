@@ -7,6 +7,7 @@ const GameDisplayController = (function () {
   const gameOverMsg = document.querySelector("#game-over-msg");
   const playerOneDiv = document.querySelector("#player-one");
   const playerTwoDiv = document.querySelector("#player-two");
+  const tieCountDiv = document.querySelector("#tie-count");
   const playAgainBtn = document.querySelector("#play-again");
 
   const createFieldItem = () => {
@@ -34,6 +35,13 @@ const GameDisplayController = (function () {
     playerTurnDiv.textContent = `It's ${
       GameController.getActivePlayer().name
     }'s turn!`;
+  };
+
+  const updateTieDiv = () => {
+    console.log("I am being run");
+    tieCountDiv.innerHTML = `<h2>Tie count</h2>
+    <p>${GameController.getTieCount()}</p>
+    `;
   };
 
   const clickHandlerField = (event) => {
@@ -83,6 +91,7 @@ const GameDisplayController = (function () {
       updatePlayerDivs(players);
     } else {
       gameOverMsg.textContent = "It's a tie!";
+      updateTieDiv();
     }
     ModalController.showGameOverModal();
   };
