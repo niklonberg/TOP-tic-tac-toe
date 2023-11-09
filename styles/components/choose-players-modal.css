@@ -1,14 +1,4 @@
 @layer component {
-  #choose-players-modal {
-    position: relative;
-  }
-
-  #close-player-modal {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-
   #choose-players-form {
     display: grid;
     gap: var(--sm-gap);
