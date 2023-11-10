@@ -9,19 +9,19 @@
   }
 
   .cross {
-    background-image: url(/assets/svg/icon-x.svg);
+    background-image: url("/assets/svg/icon-x.svg");
   }
 
   .x-outline {
-    background-image: url(/assets/svg/icon-x-outline.svg);
+    background-image: url("/assets/svg/icon-x-outline.svg");
   }
 
   .circle {
-    background-image: url(/assets/svg/icon-o.svg);
+    background-image: url("/assets/svg/icon-o.svg");
   }
 
   .o-outline {
-    background-image: url(/assets/svg/icon-o-outline.svg);
+    background-image: url("/assets/svg/icon-o-outline.svg");
   }
 
   @keyframes clickAnimation {
