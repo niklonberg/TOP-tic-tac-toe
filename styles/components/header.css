@@ -15,7 +15,7 @@
   #user-list {
     position: fixed;
     bottom: 40px;
-    right: -100px;
+    right: -200px;
     background-color: var(--secondary);
     padding: var(--sm-gap);
     margin: 0;

@@ -23,6 +23,7 @@
 
   body {
     font-family: "Outfit", system-ui, sans-serif;
+    font-size: clamp(16px, 3vw, 24px);
     background-color: var(--primary);
     color: var(--primary-contrast);
     margin: 0;
