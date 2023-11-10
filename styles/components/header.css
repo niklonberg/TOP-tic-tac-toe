@@ -20,6 +20,7 @@
     padding: var(--sm-gap);
     margin: 0;
     border-radius: var(--sm-br);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     list-style: none;
     text-align: center;
     max-height: 125px;

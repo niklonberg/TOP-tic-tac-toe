@@ -1,6 +1,7 @@
 @layer component {
   .container {
     margin-inline: auto;
+    padding-inline: var(--l-gap);
     max-width: 800px;
   }
 }

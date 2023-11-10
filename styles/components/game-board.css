@@ -1,14 +1,15 @@
 @layer component {
   #game-board {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--m-gap);
-    width: 300px;
-    height: 300px;
   }
 
   #game-board button {
+    width: 100%;
+    padding-top: 100%;
     transition: 0.5s ease-in-out;
     border: none;
     outline: revert;
