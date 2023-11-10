@@ -16,7 +16,6 @@ const Gameboard = (function () {
   ];
 
   const getField = () => {
-    console.log("the field is currently: ", gameField);
     return gameField;
   };
 
@@ -43,11 +42,7 @@ const Gameboard = (function () {
         (index) => gameField[index] === marker
       );
 
-      if (winConditionMet) {
-        console.log("win condition was met: ", winConditionMet);
-        console.log("winning player is: ", activePlayer);
-        break;
-      }
+      if (winConditionMet) break;
     }
     return winConditionMet;
   };

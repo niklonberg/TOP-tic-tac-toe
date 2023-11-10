@@ -13,7 +13,6 @@ const GameController = (function () {
       const active = index !== 1;
       const newPlayerObj = createPlayer(player, marker, active);
       players.push(newPlayerObj);
-      console.log(players);
     });
   };
 
@@ -36,7 +35,6 @@ const GameController = (function () {
   const playRound = (index) => {
     const activePlayer = getActivePlayer();
     board.addMarker(index, activePlayer);
-    console.log(board.getField());
     const winConditionMet = board.checkForWin(activePlayer);
     const tieConditionMet = board.checkForTie();
 
@@ -45,9 +43,7 @@ const GameController = (function () {
       return;
     }
 
-    winConditionMet
-      ? (console.log("game is over!"), winGame(activePlayer))
-      : switchActivePlayer();
+    winConditionMet ? winGame(activePlayer) : switchActivePlayer();
   };
 
   const startGame = (chosenPlayers) => {
