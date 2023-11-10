@@ -22,7 +22,7 @@
   }
 
   body {
-    font-family: system-ui, sans-serif;
+    font-family: "Outfit", system-ui, sans-serif;
     background-color: var(--primary);
     color: var(--primary-contrast);
     margin: 0;
