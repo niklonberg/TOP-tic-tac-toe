@@ -2,7 +2,8 @@
 
 A tic tac toe project, as part of The Odin Project's fullstack javascript learning path.  
 Focus here was using the module pattern (IIFE's) and factory functions to encapsulate code,  
-and prevent naming conflicts in larger applications. It promotes modularity, reusability, and maintainability of code.
+and prevent naming conflicts in larger applications. It promotes modularity, reusability, and maintainability of code.  
+Using ES6 arrow syntax for functions, to get used to it.
 
 ## Page
 
