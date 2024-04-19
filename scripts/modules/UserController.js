@@ -58,14 +58,18 @@ const UserController = (function () {
 
   addUserBtn.addEventListener("click", () => {
     userList.classList.add("show-users");
+    userList.scrollTop = 0;
   });
 
+  let previousScrollVal = null;
   function scrollContent() {
     userList.scrollTop += 1;
 
-    if (userList.scrollTop >= userList.scrollHeight - userList.clientHeight) {
+    if (userList.scrollTop === previousScrollVal) {
       userList.scrollTop = 0;
+      previousScrollVal = null;
     }
+    previousScrollVal = userList.scrollTop;
   }
 
   setInterval(scrollContent, 150);
